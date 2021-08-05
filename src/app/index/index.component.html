@@ -1,0 +1,32 @@
+
+<!-- Cards cargadas -->
+<section>
+    <div class="container-fluid" style="background-color: #056DAE" *ngIf="this.cards_loaded && !this.cards_failed">
+        <div class="row"> 
+            <div class="col-md-6 d-flex justify-content-center mt-5" *ngFor="let card of this.cards">
+                <app-card [title]="card.titulo" [amount]="card.amount" [description]="card.descripcion"></app-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cards aun NO cargadas -->
+<section>
+    <div *ngIf="!this.cards_loaded && !this.cards_failed">
+        <div class="container-fluid" style="background-color: white">
+            <div class="d-flex justify-content-center mt-5 pt-5">
+                <div class="spinner-border text-primary" style="width: 15rem; height: 15rem;" role="status">
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cards no se pudiron cargar -->
+<section>
+    <div  *ngIf="this.cards_failed">
+        <div class="alert alert-danger" role="alert">
+            Ha habido un fallo al recuperar los items.
+        </div>
+    </div>
+</section>

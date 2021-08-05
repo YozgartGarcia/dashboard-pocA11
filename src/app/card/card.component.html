@@ -1,0 +1,10 @@
+<div class="card text-white" style="width: 18rem; background-color: #0084c2" [ngClass]="shadow_class" (mouseover)="shadow_class='shadow-lg'" (mouseout)="shadow_class=''" >
+    <div class="card-header text-uppercase text-center fs-3" style="background-color: rgb(13, 13, 14);" >{{this.title}} </div>
+    <p></p>
+    <!-- <img class="card-img-top w-50 h-50 mx-auto" src="{{this.rute}}{{this.title}}.png" alt="Responsive image">-->
+    <span class="material-icons text-center" style="color:#e0dedef3; font-size: 1000%" > {{this.dict[this.title]}} </span>
+     <div class="card-body" >
+      <h6 class="card-subtitle mb-2 fs-5 fw-bold" style="color: #000">Monto: ${{this.amount}} </h6>
+      <p class="card-text font-monospace" style="color: #000"> {{this.description}} </p>
+    </div>
+</div>
